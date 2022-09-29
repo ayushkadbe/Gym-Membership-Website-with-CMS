@@ -31,7 +31,7 @@ include 'connect.php'
 		<?php	
 		
 		
-		// Taking all 5 values from the form data(input)
+		// Taking all 9 values from the form data(input)
 			
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];

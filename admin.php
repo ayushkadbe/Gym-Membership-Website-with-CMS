@@ -1,3 +1,9 @@
+<!--Php Database Connection Code-->
+<?php
+include 'connect.php';
+ ?>
+
+<!--HTML-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -46,33 +52,63 @@
         <table class="table">
   <thead>
     <tr class="table-dark">
-      <th scope="col">S.no</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Phone Number</th>
+      <th scope="col">PhoneNumber</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Address</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Bloodgroup</th>
       <th scope="col">Password</th>
       <th scope="col">Operations</th>
 
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Wanda</td>
-      <td>Captain America</td>
-      <td>@</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+
+    <!--Php Code-->
+    <?php
+    
+    //Retrieve Data from Database
+    $sql = "select * from `users`";
+    
+
+    //Execute
+    $result = mysqli_query($conn, $sql);
+    if($result){
+      while($row = $result->fetch_assoc()){
+
+        //Data from Database
+        $name = $row['name'];
+        $email = $row['email'];
+		    $phone = $row['phone'];
+		    $gender = $row['gender'];
+		    $address = $row['address'];
+		    $height = $row['height'];
+		    $weight = $row['weight'];
+		    $bloodgroup = $row['bloodgroup'];
+		    $password = $row['password'];
+
+        //Data printed inside Table of AdminPanel
+        echo '
+        <tr>
+          <th scope="row">'.$name.'</th>
+          <td>'.$email.'</td>
+          <td>'.$phone.'</td>
+          <td>'.$gender.'</td>
+          <td>'.$address.'</td>
+          <td>'.$height.'</td>
+          <td>'.$weight.'</td>
+          <td>'.$bloodgroup.'</td>
+          <td>'.$password.'</td>
+        </tr>
+        ';
+      };
+    }
+
+
+    ?>
   </tbody>
 </table>
 </div>

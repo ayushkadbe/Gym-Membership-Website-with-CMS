@@ -1,5 +1,6 @@
 <?php
     $conn = mysqli_connect("localhost", "root", "", "gym");
+    
 		
     // Check connection
     if($conn === false){
@@ -7,6 +8,6 @@
             . mysqli_connect_error());
     }
 
-    
+
 
  ?>
