@@ -31,12 +31,33 @@
         </div>
         <div class="mb-3">
              <label for="exampleInputPassword1" class="form-label">Phone number</label>
-             <input type="text" class="form-control" name="phone" id="phone">
+             <input type="number" class="form-control" name="phone" id="phone">
+        </div>
+        <div class="mb-3">
+             <label for="gender" class="form-label">Gender</label>
+             <input type="text" class="form-control" name="gender" id="gender">
+        </div>
+        <label for="address" class="form-label">Address</label> 
+        <div class="form-floating">               
+            <textarea class="form-control" name="address" id="address"></textarea>                         
+        </div>
+        <div class="mb-3">
+             <label for="height" class="form-label">Height</label>
+             <input type="number" class="form-control" placeholder="Height in inches" name="height" id="height">
+        </div>
+        <div class="mb-3">
+             <label for="weight" class="form-label">Weight</label>
+             <input type="number" class="form-control" placeholder="Weight in kgs" name="weight" id="weight">
+        </div>
+        <div class="mb-3">
+             <label for="bloodgroup" class="form-label">Blood Group</label>
+             <input type="text" class="form-control" name="bloodgroup" id="bloodgroup">
         </div>
         <div class="mb-3">
              <label for="Password1" class="form-label">Password</label>
              <input type="text" class="form-control" name="password" id="password">
         </div>
+
         
         <button type="submit" class="btn btn-primary">Submit</button>
 

@@ -1,3 +1,7 @@
+<?php
+include 'connect.php'
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,20 +29,20 @@
 <body>
     <div class="container">
 		<?php	
-		$conn = mysqli_connect("localhost", "root", "", "gym");
 		
-		// Check connection
-		if($conn === false){
-			die("ERROR: Could not connect. "
-				. mysqli_connect_error());
-		}
 		
 		// Taking all 5 values from the form data(input)
 			
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];
 		$phone = $_REQUEST['phone'];
+		$gender = $_REQUEST['gender'];
+		$address = $_REQUEST['address'];
+		$height = $_REQUEST['height'];
+		$weight = $_REQUEST['weight'];
+		$bloodgroup = $_REQUEST['bloodgroup'];
 		$password = $_REQUEST['password'];
+		
 	
 		
 		
@@ -46,7 +50,7 @@
 		// Performing insert query execution
 		// here our table name is college
 		$sql = "INSERT INTO users VALUES ('$name',
-			'$email','$phone','$password')";
+			'$email','$phone', '$gender', '$address', '$height', '$weight', '$bloodgroup','$password')";
 
 		
 		
@@ -55,7 +59,9 @@
 			    // ."Data stored in a database successfully.";
 
 			echo nl2br("\n$name\n $email\n "
-				. "$phone\n $password");
+			    ."$phone\n $gender\n"
+				. "$address\n $height\n $weight\n"
+				. "$bloodgroup\n $password");
 		} else{
 			echo "ERROR: Hush! Sorry $sql. "
 				. mysqli_error($conn);
