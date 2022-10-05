@@ -108,8 +108,8 @@ include 'connect.php';
           <td>'.$password.'</td>
           <td>
             <button class ="btn " style="background-color:#29d964"><a href="read.php" class= "text-light">Read</a></button>
-            <button class ="btn btn-primary"><a href="update.php" class= "text-light">Update</a></button> 
-            <button class ="btn btn-danger"><a href="delete.php" class= "text-light">Delete</a></button>
+            <button class ="btn btn-primary"><a href="update.php?updateid='.$id.'" class= "text-light">Update</a></button> 
+            <button class ="btn btn-danger"><a href="delete.php?deleteid='.$id.'" class= "text-light">Delete</a></button>
           </td>
         </tr>
         ';
