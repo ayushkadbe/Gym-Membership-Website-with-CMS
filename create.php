@@ -1,10 +1,11 @@
+<!--CREATE: insert data into the Database-->
+
 <?php
 include 'connect.php'
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
 	<title>Thank You for submitting form.</title>
 </head>
@@ -27,6 +28,7 @@ include 'connect.php'
 </style>
 
 <body>
+	
     <div class="container">
 		<?php	
 		
@@ -49,7 +51,7 @@ include 'connect.php'
 		
 		// Performing insert query execution
 		// here our table name is college
-		$sql = "INSERT INTO users VALUES ('$name',
+		$sql = "INSERT INTO users(name, email, phone, gender, address, height, weight, bloodgroup, password) VALUES ('$name',
 			'$email','$phone', '$gender', '$address', '$height', '$weight', '$bloodgroup','$password')";
 
 		

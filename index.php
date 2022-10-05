@@ -19,7 +19,7 @@
         </h1>
         <br>  
 
-        <form action="insert.php" method= "post">
+        <form action="create.php" method= "post">
         <div class="mb-3">
              <label for="name" class="form-label">Name</label>
              <input type="text" class="form-control" name="name" id="name">

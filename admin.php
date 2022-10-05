@@ -13,6 +13,7 @@ include 'connect.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
 
+
   <body>
     <!--SCRIPT-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
@@ -28,12 +29,12 @@ include 'connect.php';
       <!--LOGO-->
       <div class="logo">
         <a href="index.html">
-          <img src="assets/img/flc_design2022052144225.png" alt="logo" width="190" height="80">
+          <img src="assets/image.png" alt="logo" width="170" height="50">
         </a>
       </div>
 
       <!--LIST-->        
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+      <ul class="nav py-7 col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
       
       <li><a href="admin.php" class="nav-link px-2 text-white">Home</a></li>
       <li><a href="#" class="nav-link px-2 text-white">Payments</a></li>
@@ -47,11 +48,12 @@ include 'connect.php';
 </header>
 
 <!--DATABASE MANAGER-->
-    <div class="container">
+    <div class="container-fluid pl-5 pr-5">
         <button class="btn btn-primary my-5"><a href="index.php" class="text-light">Add User</a></button>
         <table class="table">
   <thead>
     <tr class="table-dark">
+      <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">PhoneNumber</th>
@@ -80,6 +82,7 @@ include 'connect.php';
       while($row = $result->fetch_assoc()){
 
         //Data from Database
+        $id = $row['id'];
         $name = $row['name'];
         $email = $row['email'];
 		    $phone = $row['phone'];
@@ -93,7 +96,8 @@ include 'connect.php';
         //Data printed inside Table of AdminPanel
         echo '
         <tr>
-          <th scope="row">'.$name.'</th>
+          <th scope="row">'.$id.'</th>
+          <td>'.$name.'</td>
           <td>'.$email.'</td>
           <td>'.$phone.'</td>
           <td>'.$gender.'</td>
@@ -102,6 +106,11 @@ include 'connect.php';
           <td>'.$weight.'</td>
           <td>'.$bloodgroup.'</td>
           <td>'.$password.'</td>
+          <td>
+            <button class ="btn " style="background-color:#29d964"><a href="read.php" class= "text-light">Read</a></button>
+            <button class ="btn btn-primary"><a href="update.php" class= "text-light">Update</a></button> 
+            <button class ="btn btn-danger"><a href="delete.php" class= "text-light">Delete</a></button>
+          </td>
         </tr>
         ';
       };
@@ -109,6 +118,7 @@ include 'connect.php';
 
 
     ?>
+    
   </tbody>
 </table>
 </div>
